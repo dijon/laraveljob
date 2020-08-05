@@ -9,24 +9,22 @@
                 <a class="nav-link" href="{{ url('/') }}">Начало</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Изображения</a>
+                <a class="nav-link" href="{{ url('images') }}">Изображения</a>
             </li>
             @if( auth()->check() )
             <li class="nav-item">
-                <a class="nav-link" href="#">Качи изображение</a>
+                <a class="nav-link" href="{{ url('/') }}">Качи изображение</a>
             </li>
-            @endif
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('logout') }}">Изход</a>
+            </li>
+            @else
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url('login') }}">Влизане</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('register') }}">Регистрация</a>
             </li>
-            @if( auth()->check() )
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('logout') }}">Изход</a>
-                </li>
-                @else
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('login') }}">Влизане</a>
-                </li>
             @endif
         </ul>
     </div>

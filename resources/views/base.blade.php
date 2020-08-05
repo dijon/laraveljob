@@ -14,13 +14,10 @@
 @include('layouts.nav_menu')
 <div class="container">
     <div class="row">
-        <div class="col-10">
+        <div class="col">
             @yield('content')
         </div>
-        <div class="col-2">
-            <h2>Филтър</h2>
-            @yield('sidebar')
-        </div>
+        @yield('sidebar')
     </div>
 </div>
 

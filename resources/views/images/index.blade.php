@@ -3,9 +3,11 @@
 @section('title', 'Images Index')
 
 @section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
+    <div class="col-2">
+        <h2>Филтър</h2>
+        <p>filter user</p>
+        <p>filter category</p>
+    </div>
 @endsection
 
 @section('content')
