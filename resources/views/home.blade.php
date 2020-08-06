@@ -3,11 +3,13 @@
 @section('title', 'Images Index')
 
 @section('content')
-    @foreach($latest_images as $image)
+
     <div class="row">
+    @foreach($images as $image)
         <div class="col">
-            <a href="{{ $image->id }}"><img src="{{ $image->name }}" class="img-thumbnail"></a>
+            <a href="{{ route('images.show', ['image' => $image->id]) }}"><img src="{{ asset('storage/'.$image->name) }}" class="img-fluid img-thumbnail"></a>
         </div>
-    </div>
     @endforeach
+    </div>
+
 @endsection

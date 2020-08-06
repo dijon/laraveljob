@@ -23,7 +23,7 @@ class RegistrationController extends Controller
             \request()->session()->flash('error', $exception->getMessage());
         }
 
-        $user = User::create(request(['username', 'password']));
+        $user = User::create(\request(['username', 'password']));
 
         auth()->login($user);
 

@@ -13,6 +13,7 @@
 <body>
 @include('layouts.nav_menu')
 <div class="container">
+    @include('layouts.form_errors')
     <div class="row">
         <div class="col">
             @yield('content')

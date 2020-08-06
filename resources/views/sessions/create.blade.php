@@ -20,7 +20,6 @@
         <div class="form-group">
             <button style="cursor:pointer" type="submit" class="btn btn-primary">Login</button>
         </div>
-        @include('layouts.form_errors')
     </form>
 
 @endsection

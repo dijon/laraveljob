@@ -13,7 +13,7 @@
             </li>
             @if( auth()->check() )
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/') }}">Качи изображение</a>
+                <a class="nav-link" href="{{ url('images/create') }}">Качи изображение</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('logout') }}">Изход</a>

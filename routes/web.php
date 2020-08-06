@@ -26,7 +26,7 @@ Route::post('/login', 'SessionsController@store');
 Route::get('/logout', 'SessionsController@destroy')->name('logout');
 
 Route::get('/', function () {
-    $latest_images = DB::table('images')->orderBy('created_at', 'desc')->take(6)->get();
-
-    return view('home', ['latest_images' => $latest_images]);
+    return view('home', [
+        'images' => DB::table('images')->orderBy('created_at', 'desc')->take(6)->get()
+    ]);
 });
