@@ -10,7 +10,9 @@ class ImageController extends Controller
 {
     public function index()
     {
-        return view('images.index');
+        $images = DB::table('images')->paginate(6);
+
+        return view('images.index', ['images' => $images]);
     }
 
     public function show($id)
