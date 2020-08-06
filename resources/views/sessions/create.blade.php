@@ -4,21 +4,21 @@
 
 @section('content')
 
-    <h2>Log In</h2>
+    <h2>Влизане</h2>
     <form method="POST" action="/login">
         {{ csrf_field() }}
         <div class="form-group">
-            <label for="username">Username:</label>
+            <label for="username">Потребител:</label>
             <input type="text" class="form-control" id="username" name="username">
         </div>
 
         <div class="form-group">
-            <label for="password">Password:</label>
+            <label for="password">Парола:</label>
             <input type="password" class="form-control" id="password" name="password">
         </div>
 
         <div class="form-group">
-            <button style="cursor:pointer" type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Влез</button>
         </div>
     </form>
 

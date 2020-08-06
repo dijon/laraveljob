@@ -8,11 +8,27 @@ use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $images = DB::table('images')->paginate(6);
+        $categories = DB::table('categories')->get();
+        $users = DB::table('users')->get();
 
-        return view('images.index', ['images' => $images]);
+        $where = [];
+        if ($request->has('category')) {
+            $where['category_id'] = $request->get('category');
+        }
+
+        if ($request->has('user')) {
+            $where['user_id'] = $request->get('user');
+        }
+
+        $images = DB::table('images')->where($where)->paginate(6);
+
+        return view('images.index', [
+            'images' => $images,
+            'categories' => $categories,
+            'users' => $users,
+        ]);
     }
 
     public function show($id)
